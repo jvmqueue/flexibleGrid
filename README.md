@@ -1,6 +1,6 @@
 <h1>Responive Design Via Flexible Grid</h1> 
 <p>Experimental Backbone/Underscore Application</p>
-<p><a href="http://jvmqueue.com/backbone/site/">Live URL</a></p>
+<p><a href="http://jvmqueue.com/flexibleGrid/resume/site/">Live URL</a></p>
 <h2>Current State</h2>
 <p>Proof of Concept</p>
 <p>Working, but in development</p>
