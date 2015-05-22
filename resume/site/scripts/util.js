@@ -30,7 +30,7 @@ mzc.util = (function(w, d, $){
           success:function(paramData){
             var nodeName = options.xmlNodeName;
             // TODO: mzc.util.fnc.convertXmlToJson should be convertXmlToJson, because we are now local
-            var jsonResponse = mzc.util.fnc.convertXmlToJson(paramData, nodeName);
+            var jsonResponse = _fnc.convertXmlToJson(paramData, nodeName);
             _fnc.that['jsonResponse'] = jsonResponse;
           },
           statusCode:{
