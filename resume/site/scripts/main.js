@@ -9,34 +9,6 @@ mzc.main = (function(w, d, $){
 	   	changeTitle:function(){
 	    	console.log('CHANGE TITLE MODEL LISTENER');
 	   	},
-		getData:function(options){
-			var that = this;
-			var noCache = new Date().getMilliseconds();
-			$.ajax({
-				url:options.path + '?noCache=' + noCache,
-				context:d.body,
-				'text.xml':jQuery.parseXML,
-				crossDomain:false,
-				dataType:'xml',
-				ifModified:true,			
-				success:function(paramData){
-					var nodeName = options.xmlNodeName;
-					var jsonResponse = mzc.util.fnc.convertXmlToJson(paramData, nodeName);
-					that.jsonResponse = jsonResponse;
-				},
-				statusCode:{
-					404:function(){console.log('Exception: 404 - file not found');}
-				},
-				error:function(paraError){
-					for(var arg in arguments){
-						console.group('ERROR');
-							console.log('arguments:\t', arguments[arg]);
-						console.groupEnd();	
-					}
-				}
-			}).done(function(){/* anything after done */});
-
-		}, // End getFile
 	    initialize:function(){
 
 	    }		
@@ -55,12 +27,12 @@ mzc.main = (function(w, d, $){
 			this.addListeners();
 			var that = this;
 			var data = null;
-			this.model.getData({path:'data/resume.xml', xmlNodeName:'title'});
+			mzc.util.fnc.getData({path:'data/resume.xml', xmlNodeName:'title'});
 
 			var interval = w.setInterval(function(){ // wait for data to come back from model
-				if(!!that.model.jsonResponse){
+				if(!!mzc.util.fnc.that.jsonResponse){
 					w.clearInterval(interval);
-					data = that.model.jsonResponse;
+					data = mzc.util.fnc.that.jsonResponse;
 					// setData sets data on model
 					that.setData(data);
 				}
@@ -75,6 +47,10 @@ mzc.main = (function(w, d, $){
 		render:function render(e){
 			var thisView = this.data; // scoping: sending view instance during listener definition
 			var data = this.data.model.get('heading'); // data from model which converted XML to JSON
+
+
+
+
  			var template = _.template( $('#templateTry').html() ); // templates have html as arg
  			var collection = ''; // used to concatenate templates
 
