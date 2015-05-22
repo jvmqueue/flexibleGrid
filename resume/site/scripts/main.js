@@ -79,7 +79,6 @@ mzc.main = (function(w, d, $){
  			var collection = ''; // used to concatenate templates
 
  			for(var name in data){ // could use .each, but this is more readable, more efficient
- 				anyVal = data[name];
  				collection += template(anyVal = data[name]);
  			}
 
