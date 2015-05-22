@@ -2,9 +2,8 @@ var mzc = mzc || {};
 mzc.main = (function(w, d, $){
 	var Model = Backbone.Model.extend({
 	    defaults:{
-	      PDF:'docs/MalaikaZCharboneauResume2015May18.pdf',
-	      WORD:'docs/MalaikaZCharboneauResume2015May17.doc',
-	      GALLERY:'http://wwww.malaikazcharbonneau.com',
+	      PDF:'docs/yourResumeGoesHere.pdf',
+	      WORD:'docs/yourResumeGoesHere.doc',
 	      heading:{}
 	  	},
 	   	changeTitle:function(){
