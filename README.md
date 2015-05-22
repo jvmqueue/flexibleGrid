@@ -37,13 +37,13 @@
 			│   │   │	├── yourResumeGoesHere.pdf
 			│   │	├── scripts   
 			│   │   │	├── base
+			│   │   │		├── main.js
+			│   │   │		├── util.js			
 			│   │   │		├── bower_components
 			│   │   │		│	├── backbone			
 			│   │   │		│	├── bootstrap
 			│   │   │		│	├── jquery
 			│   │   │		│	├── underscore
-			│   │   │		├── main.js
-			│   │   │		├── util.js
 			│   │	├── images
 			│   │	├── styles	
 			│   │   │	├── main.css					   
