@@ -1,0 +1,343 @@
+#index{
+	background-color:#333333;
+}
+.mainContainer{
+	background:url(../images/backgroundBrownish.png) repeat;
+}
+
+.floatRight{
+	float:right;
+}
+.screenModalBackground{
+	display:none;
+	background-color: #999999;
+	background-image: url(../images/modalPageBackground.png);
+	background-repeat: repeat;
+	width:100%;
+	height:500%;
+	border: solid red 1px;
+	opacity:0.22;
+	filter:alpha(opacity=30);
+	position:absolute;
+	z-index:200;
+	top:0;
+	left:0;	
+}
+.jsContainerModelShow{
+	display:block;
+	position:fixed;
+}
+
+.jumbotron{
+	background-color:transparent;
+}
+.jumbotron.h1 .row{
+	font-size:110%;
+	font-weight:bold;
+	letter-spacing:0.2em;
+	margin:0;
+	margin-bottom:0;
+	padding:0;
+}
+.btn.btnDownloadResume{
+	background-color:#D9C9BA;
+	width:auto;
+	border:0;
+	padding:1%;
+	box-shadow:none;
+	cursor:pointer;
+	text-decoration:underline;
+}
+.btnDownloadResume:hover{
+	color:#D9C9BA;
+	background-color:#333333;
+}
+.row.center-block{
+	width:100%;
+	text-align:center;
+}
+.bold, h4.bold{
+	font-weight:bold;
+}
+.bold.title{
+	padding-right:4.3em;
+	padding-left:0;
+}
+.location{
+	padding-left:0;
+}
+.columnRight ul{
+	padding-left:1.0em;
+}
+.columnRight li{
+	list-style:outside;
+	width:70%;
+}
+.cellExperience li{
+	list-style:outside;
+	width:50%;
+}
+.cellHeader{
+ 	margin-bottom:0;
+ 	border-bottom:solid 0.2em #8F8272;
+ }
+.container .row{
+ 	 margin-bottom:1.5em;
+ }
+.container .row .h5{
+ 	 margin-bottom:0;
+ }
+.majorParenthesis{
+	padding:0 0;
+}
+.experience ul{
+	padding-left:13.5em;	
+ }
+ .experience li{
+	list-style:outside;
+	width:90%; 	
+ }
+ .experience p{
+	margin:0; 	
+ }
+ .experience .topMostUl{
+	padding-top:2.0em; 	
+ }
+ .experience ul{
+	padding-left:6.5em;
+ }
+.objective{
+	
+	padding-left:0.1em;
+}
+.progressContainer{
+	padding-left:0;
+}
+.progress{
+	background-color:transparent;
+	background-image:none;
+	margin:0.4em 0 0 0;
+	height:1.0em;
+}
+
+.progress-bar{
+	background-image:none;
+	background-color:#1F1A14;
+	height:0.7em;
+}
+.progress-bar0{
+	width:70%;
+}
+.progress-bar1{
+	width:75%;
+}
+.progress-bar2{
+	width:50%;
+}
+.progress-bar3{
+	width:80%;
+}
+.progress-bar4{
+	width:80%;
+}
+
+
+.references{
+	padding-left:0;
+}
+
+/* Begin Model */
+/* hide modal while its in development */
+.modal-content{
+	margin:auto;
+	top:43%;
+	width:92.5%;
+	background-color:transparent;
+	position: absolute;
+	top:39%;
+	left:3.7%;		
+}
+.modal-body{
+	width:90%;
+}
+#btn0{
+	background-image:url(../images/spriteButtonDownLoadWhiteBk.png);
+	background-position:-32px 53px;
+	letter-spacing:3px;
+	text-align:left;
+
+}
+#btn0:hover{
+	background-position:287px 53px;
+	cursor:pointer;
+}
+
+
+.frmScreen{
+	background:url(../images/modalFormBackground.png) center center no-repeat;
+	-webkit-box-shadow:0 3px 9px rgba(0, 0, 0, .5);
+	box-shadow:7px 15px 14px #333333;
+	border-radius:10px; 
+	height:256px;
+	font-size:0.9em;
+	overflow:visible;
+}
+
+
+.frmScreen .btnClose{
+	background-image:url(../images/btnCloseA.png);
+	background-position:0 0;
+	background-color:transparent;
+	background-repeat:no-repeat;	
+	border-radius:100px;	
+	width:27px;
+	height:26px;
+	opacity:1;
+	position:relative;
+	top:-14px;
+	right:-27px;
+	cursor:pointer;
+}
+.frmScreen #btnClose:hover{
+	background-image:url(../images/btnCloseHover.png);
+}
+.containerBtnClose{
+	float:right;
+}
+.frmScreen fieldset div.btnControls{
+	border:0;
+	text-align:left;
+}
+div.modalSwatch{
+	background:url(../images/modalSwatch.jpg) left top no-repeat;
+	opacity:0.9;
+	position:relative;
+	left:-16px;
+	border-radius:10px;
+	height:69px; 
+	width:18%;
+}
+#modalListContainer{
+	margin:0;
+	padding:0;
+}
+.btn{
+	color:#000000;
+	border:2px solid #CCCCCC;
+	padding:0;
+	background-color:#DDDDDD;
+	-webkit-box-shadow:1px 4px 3px #999998;
+	box-shadow:1px 4px 3px #999998;
+	width:4.5em;
+}
+.btn.pdf{
+	margin-left:1.0em;
+}
+.btnClose1{
+
+
+
+	margin:1.0em 47%;
+
+}
+.btnClose1:hover{
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+#modalListContainer li{
+	
+
+	list-style:none;
+	
+	
+	
+	
+	
+	
+
+	cursor:pointer;
+}
+#modalListContainer li:hover{
+	background-color:#666666;
+	color:#FFFFFF;	
+}
+
+
+
+
+
+
+
+/* End Model */
+
+@media (min-width:768px){
+	.modal-dialog{
+	  width:511px;
+	}	
+}
+
+ @media (min-width:360px) and (orientation:portrait){
+
+	.col-sm-6.frmScreen .btnClose{
+		display:none;
+	}
+
+
+	.jumbotron.h1 .row{
+		font-size:90%;
+	} 	
+	.experience ul{
+		padding-left:3.0em;	
+	}
+	.majorParenthesis{
+		padding:0 1.0em;
+	}
+	.frmScreen{
+		background-position:-40px center;
+	}	
+	.modal-content{
+		margin:auto;
+		padding:0;
+	}
+	div.modalSwatch{		
+		width:28%;
+	}	 	
+}
+@media (max-width: 767px) and (orientation:landscape){ /* mobal landscape */
+
+	.col-sm-6.frmScreen .btnClose{
+		display:none;
+	}
+
+	.experience .col-xs-4{
+		width:25%;
+	}
+	.experience .col-xs-8{
+		width:75%;
+	}	
+	.frmScreen{
+		margin:auto;
+		padding:0;
+		width:70%;
+	}
+	.modal-title{
+		width:100%;
+	}	
+	div.modalSwatch{
+		width:20%;		
+		left:0;
+	}
+}
+
+
+ @media (min-width: 360px){ /* Mobal all */
+	.modal-content, fieldset{
+		border:none;
+		box-shadow:none;
+	}
+
+	.modalSwatch{		
+		width:20%; 
+	}	 	
+}
