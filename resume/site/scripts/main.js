@@ -75,7 +75,7 @@ mzc.main = (function(w, d, $){
 		render:function render(e){
 			var thisView = this.data; // scoping: sending view instance during listener definition
 			var data = this.data.model.get('heading'); // data from model which converted XML to JSON
-			
+			var anyVal = '';
  			var template = _.template( $('#templateTry').html() ); // templates have html as arg
  			var collection = ''; // used to concatenate templates
 
