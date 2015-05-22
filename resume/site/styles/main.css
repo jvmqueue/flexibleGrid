@@ -209,7 +209,7 @@
 	text-align:left;
 }
 div.modalSwatch{
-	background:url(../images/modalSwatch.jpg) left top no-repeat;
+	background:url(../images/modalSwatch.png) left -10px no-repeat;
 	opacity:0.9;
 	position:relative;
 	left:-16px;
