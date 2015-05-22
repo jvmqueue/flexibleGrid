@@ -46,7 +46,7 @@
 			│   │   │		│	├── underscore
 			│   │	├── images
 			│   │	├── styles	
-			│   │   │	├── main.css					   
+			│   │   │	├── main.css		   
 			│   │   │
 		</code>
 	</pre>
