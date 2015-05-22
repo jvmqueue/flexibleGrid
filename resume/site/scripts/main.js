@@ -13,7 +13,7 @@ mzc.main = (function(w, d, $){
 			var that = this;
 			var noCache = new Date().getMilliseconds();
 			$.ajax({
-				url:'data/resume.xml?noCache=' + noCache,
+				url:options.path + '?noCache=' + noCache,
 				context:d.body,
 				'text.xml':jQuery.parseXML,
 				crossDomain:false,
@@ -55,7 +55,7 @@ mzc.main = (function(w, d, $){
 			this.addListeners();
 			var that = this;
 			var data = null;
-			this.model.getData({xmlNodeName:'title'});
+			this.model.getData({path:'data/resume.xml', xmlNodeName:'title'});
 
 			var interval = w.setInterval(function(){ // wait for data to come back from model
 				if(!!that.model.jsonResponse){
