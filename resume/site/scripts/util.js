@@ -18,7 +18,6 @@ mzc.util = (function(w, d, $){
     		return json;
       }, // End convertXmlToJson
       getData:function(options){
-        var that = this;
         var noCache = new Date().getMilliseconds();
         $.ajax({
           url:options.path + '?noCache=' + noCache,
