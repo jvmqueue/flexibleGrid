@@ -13,10 +13,11 @@
 	<li>Underscore JS</li>	
 	<li>BootStrap CSS</li>	
 	<li>CSS3</li>	
+	<li>XML</li>	
 </ul>
 <h3>Stategies and Techniques</h3>
 <ul>
-	<li>Hash maps for persisting DOM node access</li>
+	<li>Util for converting XML to JSON</li>
 	<li>Backbone.js for employing Model View workflow</li>
 	<li>Underscore.js for HTML templates</li>
 	<li>Bootstrap for Responsive Grid</li>
