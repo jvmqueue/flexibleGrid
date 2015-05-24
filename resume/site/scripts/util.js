@@ -1,7 +1,6 @@
 var mzc = mzc || {};
 mzc.util = (function(w, d, $){
   var _fnc = {
-      that:{},
       setListener:function(options){
         $(options.selector).on(options.event, options.data, options.listener);
       },
@@ -19,30 +18,25 @@ mzc.util = (function(w, d, $){
       }, // End convertXmlToJson
       getData:function(options){
         var noCache = new Date().getMilliseconds();
-        $.ajax({
-          url:options.path + ( !!options.cache ? '' : '?noCache=' + noCache ),
-          context:d.body,
-          'text.xml':jQuery.parseXML,
-          crossDomain:false,
-          dataType:'xml',
-          ifModified:true,      
-          success:function(paramData){
-            var nodeName = options.xmlNodeName;
-            // TODO: mzc.util.fnc.convertXmlToJson should be convertXmlToJson, because we are now local
-            var jsonResponse = _fnc.convertXmlToJson(paramData, nodeName);
-            _fnc.that['jsonResponse'] = jsonResponse;
-          },
-          statusCode:{
-            404:function(){console.log('Exception: 404 - file not found');}
-          },
-          error:function(paraError){
-            for(var arg in arguments){
-              console.group('ERROR');
-                console.log('arguments:\t', arguments[arg]);
-              console.groupEnd(); 
+        return $.ajax({ // return the response so that callee does not have to look for reponse
+            url:options.path + ( !!options.cache ? '' : '?noCache=' + noCache ),
+            context:d.body,
+            'text.xml':jQuery.parseXML,
+            crossDomain:false,
+            dataType:'xml',
+            ifModified:true,      
+            success:function(paramData){
+              
+            },
+            statusCode:{
+              404:function(){
+                throw new Error('Exception: 404 - file not found');
+              }
+            },
+            error:function(paramError){                
+              throw new Error('Exception: util.getData failed with: ' + paramError.statusText); 
             }
-          }
-        }).done(function(){/* anything after done */});
+          }).done(function(){/* anything after done */});
 
       } // End getData
 
