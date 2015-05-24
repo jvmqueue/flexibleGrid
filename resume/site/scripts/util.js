@@ -20,7 +20,7 @@ mzc.util = (function(w, d, $){
       getData:function(options){
         var noCache = new Date().getMilliseconds();
         $.ajax({
-          url:options.path + '?noCache=' + noCache,
+          url:options.path + ( !!options.cache ? '' : '?noCache=' + noCache ),
           context:d.body,
           'text.xml':jQuery.parseXML,
           crossDomain:false,
