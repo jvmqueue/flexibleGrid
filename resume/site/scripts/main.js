@@ -11,7 +11,30 @@ mzc.main = (function(w, d, $){
 	   	},
 	    initialize:function(){
 
-	    }		
+	    },
+		setData:function(paramObj){
+			var data = paramObj;
+			var that = this;
+			for(var name in data){
+				that.attributes.heading[name] = data[name];
+			}
+			that.trigger('change:heading'); // trigger manually because we are not using set method
+		},	    
+		getData:function(options){
+			var that = this;
+			var data = null;
+
+			mzc.util.fnc.getData({path:options.path, xmlNodeName:options.xmlNodeName, cache:options.cache});
+
+			var interval = w.setInterval(function(){ // wait for data to come back from xmlHttpRequest
+				if(!!mzc.util.fnc.that.jsonResponse){
+					w.clearInterval(interval);
+					data = mzc.util.fnc.that.jsonResponse;
+					// setData sets data on model
+					that.setData(data);
+				}
+			}, 333);			
+		}	    		
 	});
 
 	var View = Backbone.View.extend({
@@ -26,18 +49,7 @@ mzc.main = (function(w, d, $){
 		main:function(){
 			this.addListeners();
 			var that = this;
-			var data = null;
-			/* TODO: getData should belong to the Model not the View */
-			mzc.util.fnc.getData({path:'data/resume.xml', xmlNodeName:'title', cache:false});
-
-			var interval = w.setInterval(function(){ // wait for data to come back from model
-				if(!!mzc.util.fnc.that.jsonResponse){
-					w.clearInterval(interval);
-					data = mzc.util.fnc.that.jsonResponse;
-					// setData sets data on model
-					that.setData(data);
-				}
-			}, 333);
+			this.model.getData( {path:'data/resume.xml', xmlNodeName:'title', cache:false} );
 		},
 		initialize:function(){
 			this.main();
@@ -48,10 +60,6 @@ mzc.main = (function(w, d, $){
 		render:function render(e){
 			var thisView = this.data; // scoping: sending view instance during listener definition
 			var data = this.data.model.get('heading'); // data from model which converted XML to JSON
-
-
-
-
  			var template = _.template( $('#templateTry').html() ); // templates have html as arg
  			var collection = ''; // used to concatenate templates
 
@@ -61,13 +69,6 @@ mzc.main = (function(w, d, $){
 
  			thisView.$el.html(collection); // append with our html string
  			thisView.containerBtn.removeClass('hide');
-		},
-		setData:function(paramObj){
-			var data = paramObj;
-			for(var name in data){
-				this.model.attributes.heading[name] = data[name];
-			}
-			this.model.trigger('change:heading'); // trigger manually because we are not using set method
 		},
 		openDownLoadForm:function(e){
 			// open model
