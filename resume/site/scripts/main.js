@@ -24,12 +24,13 @@ mzc.main = (function(w, d, $){
 			var that = this;
 			var data = null;
 
-			mzc.util.fnc.getData({path:options.path, xmlNodeName:options.xmlNodeName, cache:options.cache});
+			data = mzc.util.fnc.getData({path:options.path, xmlNodeName:options.xmlNodeName, cache:options.cache});
 
 			var interval = w.setInterval(function(){ // wait for data to come back from xmlHttpRequest
-				if(!!mzc.util.fnc.that.jsonResponse){
+				if(!!data.responseXML){
 					w.clearInterval(interval);
-					data = mzc.util.fnc.that.jsonResponse;
+					data = data.responseXML;
+					data = mzc.util.fnc.convertXmlToJson(data, 'title');
 					// setData sets data on model
 					that.setData(data);
 				}
