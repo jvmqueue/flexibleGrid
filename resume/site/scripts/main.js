@@ -27,7 +27,8 @@ mzc.main = (function(w, d, $){
 			this.addListeners();
 			var that = this;
 			var data = null;
-			mzc.util.fnc.getData({path:'data/resume.xml', xmlNodeName:'title'});
+			/* TODO: getData should belong to the Model not the View */
+			mzc.util.fnc.getData({path:'data/resume.xml', xmlNodeName:'title', cache:false});
 
 			var interval = w.setInterval(function(){ // wait for data to come back from model
 				if(!!mzc.util.fnc.that.jsonResponse){
