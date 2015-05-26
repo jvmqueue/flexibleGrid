@@ -6,6 +6,7 @@ mzc.util = (function(w, d, $){
       },
       convertXmlToJson:function(paramXml, paramNodeName){
         var xml = paramXml.firstChild;
+
         var xmlParent = xml.getElementsByTagName(paramNodeName)[0];
         var json = {};
 
@@ -23,7 +24,7 @@ mzc.util = (function(w, d, $){
             context:d.body,
             'text.xml':jQuery.parseXML,
             crossDomain:false,
-            dataType:'xml',
+            dataType:( !!options.fileType ? options.fileType : 'xml' ),
             ifModified:true,      
             success:function(paramData){
               
@@ -34,7 +35,11 @@ mzc.util = (function(w, d, $){
               }
             },
             error:function(paramError){                
-              throw new Error('Exception: util.getData failed with: ' + paramError.statusText); 
+              throw new Error(
+                'Exception: util.getData failed with:' + paramError.statusText +
+                ' fileType:\t' + options.fileType +
+                '\n, but file came back as:\t' + paramError.responseText
+              ); 
             }
           }).done(function(){/* anything after done */});
 
