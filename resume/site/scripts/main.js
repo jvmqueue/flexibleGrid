@@ -24,7 +24,12 @@ mzc.main = (function(w, d, $){
 			var that = this;
 			var data = null;
 
-			data = mzc.util.fnc.getData({path:options.path, xmlNodeName:options.xmlNodeName, cache:options.cache});
+			data = mzc.util.fnc.getData({
+				path:options.path, 
+				fileType:options.fileType,
+				xmlNodeName:options.xmlNodeName, 
+				cache:options.cache
+			});
 
 			var interval = w.setInterval(function(){ // wait for data to come back from xmlHttpRequest
 				if(!!data.responseXML){
@@ -50,7 +55,7 @@ mzc.main = (function(w, d, $){
 		main:function(){
 			this.addListeners();
 			var that = this;
-			this.model.getData( {path:'data/resume.xml', xmlNodeName:'title', cache:false} );
+			this.model.getData( {path:'data/resume.xml', fileType:'xml', xmlNodeName:'title', cache:false} );
 		},
 		initialize:function(){
 			this.main();
